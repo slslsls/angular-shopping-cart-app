@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Boilerplate</title>
+  <!-- styles -->
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./css/main.css" rel="stylesheet" media="screen">
+</head>
+  <body>
+    <div class="container">
+      <h1>HEADING</h1>
+      <nav>
+        <a href="#/">
+          <div>Home</div>
+        </a>
+        <a href="">
+          <div>About</div>
+        </a>
+        <a href="">
+          <div>Contact</div>
+        </a>
+      </nav>
+    </div>
+    <div ng-view></div>
+    <!-- scripts -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js" type="text/javascript"></script>
+    <script src="./app/app.module.js" type="text/javascript"></script>
+    <script src="./app/checkout/checkout.controller.js" type="text/javascript"></script>
+    <script src="./app/checkout/checkout.service.js" type="text/javascript"></script>
+    <script src="./app/checkout/config.route.js" type="text/javascript"></script>
+    <script src="./app/shop/shop.controller.js" type="text/javascript"></script>
+    <script src="./app/shop/shop.service.js" type="text/javascript"></script>
+    <script src="./app/shop/config.route.js" type="text/javascript"></script>
+  </body>
+</html>
