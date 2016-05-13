@@ -1,2 +1,6 @@
 <div>{{view.message}}</div>
 <a class="btn btn-primary" ng-href="#/checkout">Checkout</a>
+<div ng-repeat="item in view.items">
+  {{item.name}}
+</div>
+<button ng-click="view.consoleLog()" type="button">console.log</button>

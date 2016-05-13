@@ -1,8 +1,12 @@
-angular.module('myApp')
+(function() {
+  'use strict';
+
+  angular.module('myApp')
   .config(function($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'app/shop/shop.html',
-        controller: 'Shop'
-      })
+    .when('/', {
+      templateUrl: 'app/shop/shop.html',
+      controller: 'Shop'
+    })
   });
+})();
