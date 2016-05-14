@@ -1,6 +1,28 @@
 <div>{{view.message}}</div>
-<a class="btn btn-primary" ng-href="#/checkout">Checkout</a>
+<a class="btn btn-primary" ng-href="#/checkout">Checkout | {{view.bag.length}}</a>
 <div ng-repeat="item in view.items">
+  <img src="{{item.imageUrl}}" alt="image of tea ingredients">
   {{item.name}}
+  Price: {{item.price}}
+  Caffeine Scale: {{item.caffeineScale}}
+  Ingredients: {{item.ingredients}}
+  Rating: {{item.rating}}
+  In Stock? {{item.inStock}}
+  Categories:
+    <ul>
+      <li ng-repeat="category in item.categories">
+        {{category}}
+      </li>
+    </ul>
+  <form ng-submit="view.addItem(item)">
+    <label for="qty">Quantity</label>
+    <select ng-model="item.qty" name="qty" id="qty">
+      <option name="qty" value="1">1</option>
+      <option name="qty" value="2">2</option>
+      <option name="qty" value="3">3</option>
+      <option name="qty" value="4">4</option>
+      <option name="qty" value="5">5</option>
+    </select>
+    <input type="submit" value="Add To Bag">
+  </form>
 </div>
-<button ng-click="view.consoleLog()" type="button">console.log</button>

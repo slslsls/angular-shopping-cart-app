@@ -2,13 +2,16 @@
   'use strict';
 
   angular.module('myApp')
-    .factory('Checkout', function() {
+    .factory('Checkout', function($http) {
       return {
-        message: 'hello from the Checkout factory',
         bag: [],
-        addItem: function(item, qty) {
-          for (i = 1; i <= qty; i++) {
-            bag.push(item);
+        addItem: function(item) {
+          if (item.qty === undefined) {
+            this.bag.push(item);
+          } else {
+            for (var i = 0; i < item.qty; i++) {
+              this.bag.push(item);
+            }
           }
         }
       }
