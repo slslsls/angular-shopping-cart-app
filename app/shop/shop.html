@@ -1,5 +1,13 @@
-<div>{{view.message}}</div>
-<a class="btn btn-primary" ng-href="#/checkout">Checkout | {{view.bag.length}}</a>
+<div class="text-muted align-left">
+  Search by category:
+  Search by name:
+</div>
+<div class="align-right">
+  <a class="btn btn-coral" ng-href="#/checkout">Checkout | Bag<!--
+    --><span ng-show="!view.bag.length">: Empty!</span>
+    <span ng-show="view.bag.length">({{view.bag.length}})</span>
+  </a>
+</div>
 <div ng-repeat="item in view.items">
   <img src="{{item.imageUrl}}" alt="image of tea ingredients">
   {{item.name}}
@@ -7,7 +15,9 @@
   Caffeine Scale: {{item.caffeineScale}}
   Ingredients: {{item.ingredients}}
   Rating: {{item.rating}}
-  In Stock? {{item.inStock}}
+  In Stock?
+    <span ng-show="item.inStock">Yes</span>
+    <span ng-show="!item.inStock">No</span>
   Categories:
     <ul>
       <li ng-repeat="category in item.categories">
@@ -17,11 +27,11 @@
   <form ng-submit="view.addItem(item)">
     <label for="qty">Quantity</label>
     <select ng-model="item.qty" name="qty" id="qty">
-      <option name="qty" value="1">1</option>
-      <option name="qty" value="2">2</option>
-      <option name="qty" value="3">3</option>
-      <option name="qty" value="4">4</option>
-      <option name="qty" value="5">5</option>
+      <option name="qty" value=1>1</option>
+      <option name="qty" value=2>2</option>
+      <option name="qty" value=3>3</option>
+      <option name="qty" value=4>4</option>
+      <option name="qty" value=5>5</option>
     </select>
     <input type="submit" value="Add To Bag">
   </form>

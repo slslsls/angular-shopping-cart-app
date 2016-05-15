@@ -1,3 +1,26 @@
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: coral;
+}
+
+.align-left {
+  width: 49%;
+  display: inline-block;
+  text-align: left;
+}
+
+.align-right {
+  width: 49%;
+  display: inline-block;
+  text-align: right;
+}
+
+.btn-coral {
+  background-color: coral;
+  color: white;
+}
+
 $baseFontSize: 16;
 $green: #1abc9c;
 $yellow: #f1c40f;
