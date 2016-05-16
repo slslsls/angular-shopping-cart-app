@@ -1,6 +1,11 @@
 <div class="text-muted align-left">
   Search by category:
-  Search by name:
+  <select name="searchCategory" ng-model="searchCategory">
+    <option value="">all</option>
+    <option ng-repeat="category in view.categories">{{category}}</option>
+  </select>
+  &nbsp;Search by name:
+  <input type="text" name="name" value="searchName" ng-model="searchName" />
 </div>
 <div class="align-right">
   <a class="btn btn-coral" ng-href="#/checkout">Checkout | Bag<!--
@@ -29,7 +34,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="item in view.items | orderBy:orderAttr">
+    <tr ng-repeat="item in view.items | orderBy:orderAttr | filter:{categories:searchCategory} | filter:{name:searchName}">
       <td class="tea-column">
         <div class="img-div">
           <img src="{{item.imageUrl}}" alt="image of tea ingredients" />
@@ -40,11 +45,9 @@
         <form class="float-right" ng-submit="view.addItem(item)">
           <label for="qty"><h3>Quantity: </h3></label>
           <select ng-model="item.qty" name="qty" id="qty">
-            <option name="qty" value=1>1</option>
-            <option name="qty" value=2>2</option>
-            <option name="qty" value=3>3</option>
-            <option name="qty" value=4>4</option>
-            <option name="qty" value=5>5</option>
+            <option name="qty" ng-repeat="quantity in view.quantities" value={{quantity}}>
+              {{quantity}}
+            </option>
           </select>
           <input class="btn btn-orange" type="submit" value="Add To Bag">
         </form>
