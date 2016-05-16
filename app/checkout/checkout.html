@@ -29,7 +29,12 @@
       </td>
       <td class="other-column">
         <span ng-show="!item.editing">{{item.qty}}</span>
-        <input class="edit-qty" ng-show="item.editing" ng-model="item.qty" type="number" value={{item.qty}} />
+        <input
+          class="edit-qty"
+          ng-show="item.editing"
+          ng-model="item.qty"
+          type="number"
+          value={{item.qty}} />
       </td>
       <td class="other-column">
         <strong>{{item.price * item.qty | currency}}</strong>
@@ -39,7 +44,9 @@
           <span ng-show="!item.editing">Edit</span>
           <span ng-show="item.editing">Save</span>
         </button>
-        <button ng-click="view.removeItem(item)" class="btn btn-coral">Remove</button>
+        <button ng-click="view.removeItem(item)" class="btn btn-coral">
+          Remove
+        </button>
       </td>
     </tr>
   </tbody>
