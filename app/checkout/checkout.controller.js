@@ -11,9 +11,11 @@
     };
     $scope.view.editItem = function(item) {
       Checkout.editItem(item);
+      $scope.view.total = Checkout.total;
     };
     $scope.view.removeItem = function(item) {
       Checkout.removeItem(item);
+      $scope.view.total = Checkout.total;
     };
   });
 })();
