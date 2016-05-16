@@ -21,6 +21,10 @@
           this.bag.push(item);
           this.updateTotal();
         },
+        editItem: function(item) {
+          item.editing = !item.editing;
+          this.updateTotal();
+        },
         removeItem: function(item) {
           for (var i = 0; i < this.bag.length; i++) {
             if (this.bag[i] === item) {

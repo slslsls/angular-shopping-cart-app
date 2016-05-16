@@ -35,7 +35,7 @@
         <strong>{{item.price * item.qty | currency}}</strong>
       </td>
       <td class="other-column">
-        <button ng-click="item.editing = !item.editing; view.updateTotal()" class="btn btn-orange">
+        <button ng-click="view.editItem(item)" class="btn btn-orange">
           <span ng-show="!item.editing">Edit</span>
           <span ng-show="item.editing">Save</span>
         </button>

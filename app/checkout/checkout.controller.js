@@ -8,12 +8,12 @@
     $scope.view.total = Checkout.total;
     $scope.view.updateTotal = function() {
       Checkout.updateTotal();
-    }
+    };
     $scope.view.editItem = function(item) {
       Checkout.editItem(item);
-    }
+    };
     $scope.view.removeItem = function(item) {
       Checkout.removeItem(item);
-    }
+    };
   });
 })();
