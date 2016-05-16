@@ -5,7 +5,7 @@ h1 {
 }
 
 .align-left {
-  width: 49%;
+  width: 50%;
   display: inline-block;
   text-align: left;
 }
@@ -19,6 +19,72 @@ h1 {
 .btn-coral {
   background-color: coral;
   color: white;
+}
+
+.btn-orange {
+  background-color: orange;
+  color: white;
+}
+
+.float-right {
+  float: right;
+}
+
+h2, h3 {
+  display: inline-block;
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  outline: 1px solid lightgray;
+}
+
+th {
+  height: 40px;
+  font-weight: normal;
+  padding-left: 1%;
+}
+
+.tea-column {
+  width: 30%;
+}
+
+.info-column {
+  padding-left: 1%;
+  padding-right: 1%;
+  line-height: 25px;
+}
+
+.product-column {
+  width: 60%;
+  padding-left: 1%;
+  line-height: 25px;
+  padding-bottom: 20px;
+}
+
+.other-column {
+  padding-left: 1%;
+  padding-top: 10px;
+  vertical-align: top;
+}
+
+.edit-qty {
+  width: 50%;
+  max-width: 60px;
+}
+
+.img-div {
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+}
+
+table {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 $baseFontSize: 16;

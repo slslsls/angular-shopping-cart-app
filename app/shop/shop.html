@@ -8,31 +8,62 @@
     <span ng-show="view.bag.length">({{view.bag.length}})</span>
   </a>
 </div>
-<div ng-repeat="item in view.items">
-  <img src="{{item.imageUrl}}" alt="image of tea ingredients">
-  {{item.name}}
-  Price: {{item.price}}
-  Caffeine Scale: {{item.caffeineScale}}
-  Ingredients: {{item.ingredients}}
-  Rating: {{item.rating}}
-  In Stock?
-    <span ng-show="item.inStock">Yes</span>
-    <span ng-show="!item.inStock">No</span>
-  Categories:
-    <ul>
-      <li ng-repeat="category in item.categories">
-        {{category}}
-      </li>
-    </ul>
-  <form ng-submit="view.addItem(item)">
-    <label for="qty">Quantity</label>
-    <select ng-model="item.qty" name="qty" id="qty">
-      <option name="qty" value=1>1</option>
-      <option name="qty" value=2>2</option>
-      <option name="qty" value=3>3</option>
-      <option name="qty" value=4>4</option>
-      <option name="qty" value=5>5</option>
-    </select>
-    <input type="submit" value="Add To Bag">
-  </form>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Tea
+      </th>
+      <th>
+        <div class="align-left">
+          Information
+        </div>
+        <div class="align-right">
+          Sort by price:
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in view.items">
+      <td class="tea-column">
+        <div class="img-div">
+          <img src="{{item.imageUrl}}" alt="image of tea ingredients" />
+        </div>
+      </td>
+      <td class="info-column">
+        <h3>{{item.name}}</h3>
+        <form class="float-right" ng-submit="view.addItem(item)">
+          <label for="qty"><h3>Quantity: </h3></label>
+          <select ng-model="item.qty" name="qty" id="qty">
+            <option name="qty" value=1>1</option>
+            <option name="qty" value=2>2</option>
+            <option name="qty" value=3>3</option>
+            <option name="qty" value=4>4</option>
+            <option name="qty" value=5>5</option>
+          </select>
+          <input class="btn btn-orange" type="submit" value="Add To Bag">
+        </form>
+        <br>
+        <strong>Price: </strong>{{item.price | currency}}
+        <br>
+        <strong>Caffeine Scale: </strong>{{item.caffeineScale}}
+        <br>
+        <strong>Ingredients: </strong>{{item.ingredients}}
+        <br>
+        <strong>Rating: </strong>{{item.rating}}
+        <br>
+        <strong>In Stock? </strong>
+          <span ng-show="item.inStock">Yes</span>
+          <span ng-show="!item.inStock">No</span>
+        <br>
+        <strong>Categories: </strong>
+        <ul>
+          <li ng-repeat="category in item.categories">
+            {{category}}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>

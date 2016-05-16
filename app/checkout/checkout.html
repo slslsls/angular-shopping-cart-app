@@ -1,18 +1,46 @@
-<h1>Order total: {{view.total | currency}}</h1>
-<div ng-repeat="item in view.bag">
-  {{item.name}}
-  <img src="{{item.imageUrl}}" alt="">
-  Caffeine Scale: {{item.caffeineScale}}
-  Ingredients: {{item.ingredients}}
-  Rating: {{item.rating}}
-  Quantity:
-    <span ng-show="!item.editing">{{item.qty}}</span>
-    <input ng-show="item.editing" ng-model="item.qty" type="number" value={{item.qty}} />
-  <button ng-click="item.editing = !item.editing; view.updateTotal()" class="btn btn-info">
-    <span ng-show="!item.editing">Edit</span>
-    <span ng-show="item.editing">Save</span>
-  </button>
-  Subtotal: {{item.price * item.qty}}
-
-  <button ng-click="view.removeItem(item)" class="btn btn-warning">Remove</button>
-</div>
+<h2>My Shopping Bag</h2>
+<h2 class="float-right">Order total: {{view.total | currency}}</h2>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Product
+      </th>
+      <th>
+        Quantity
+      </th>
+      <th>
+        Sub-total
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in view.bag">
+      <td class="product-column">
+        <h3>{{item.name}}</h3>
+        <br>
+        <img src="{{item.imageUrl}}" alt="">
+        <br>
+        <strong>Caffeine Scale: </strong>{{item.caffeineScale}}
+        <br>
+        <strong>Ingredients: </strong>{{item.ingredients}}
+        <br>
+        <strong>Rating: </strong>{{item.rating}}
+      </td>
+      <td class="other-column">
+        <span ng-show="!item.editing">{{item.qty}}</span>
+        <input class="edit-qty" ng-show="item.editing" ng-model="item.qty" type="number" value={{item.qty}} />
+      </td>
+      <td class="other-column">
+        <strong>{{item.price * item.qty | currency}}</strong>
+      </td>
+      <td class="other-column">
+        <button ng-click="item.editing = !item.editing; view.updateTotal()" class="btn btn-orange">
+          <span ng-show="!item.editing">Edit</span>
+          <span ng-show="item.editing">Save</span>
+        </button>
+        <button ng-click="view.removeItem(item)" class="btn btn-coral">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
